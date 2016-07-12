@@ -55,8 +55,7 @@ class CFDASpider(Spider):
             yield Request(self.front_part_url + url, callback=self.parse_item)
 
     def parse_item(self, response):
-        with open(str(time.time())+'.html','wb')as f:
-            f.write(response.body)
+
         soup = BeautifulSoup(response.body, 'html5lib')
         couples = soup.find('table', width='100%', align='center').find_all('tr', bgcolor=None)
         dic = {}

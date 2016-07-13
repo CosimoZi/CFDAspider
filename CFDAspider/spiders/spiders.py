@@ -56,7 +56,7 @@ class CFDASpider(Spider):
 
     def parse_item(self, response):
 
-        soup = BeautifulSoup(response.body, 'html5lib')
+        soup = BeautifulSoup(response.body, 'html5lib',from_encoding='utf-8')
         couples = soup.find('table', width='100%', align='center').find_all('tr', bgcolor=None)
         dic = {}
         for couple in couples:

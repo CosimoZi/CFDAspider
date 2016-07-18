@@ -5,7 +5,6 @@ from scrapy import FormRequest, Request
 from scrapy.spiders import Spider
 from bs4 import BeautifulSoup
 from CFDAspider.items import CFDAItem
-import time
 
 
 class CFDASpider(Spider):
